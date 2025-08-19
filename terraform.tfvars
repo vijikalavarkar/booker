@@ -24,6 +24,9 @@ route_table_tag = "booker_public_route_table"
 # Security Group
 aws_security_group_tag = "booker_security_group"
 
+# Tester Security Group
+tester_internet_gateway_tag = "tester_security_group"
+
 
 
 
