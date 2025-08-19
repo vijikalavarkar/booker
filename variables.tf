@@ -24,5 +24,3 @@ variable "route_table_tag" {}
 # Security Group
 variable "aws_security_group_tag" {}
 
-# Tester Security Group
-variable "tester_internet_gateway_tag" {}

@@ -6,11 +6,3 @@ resource "aws_internet_gateway" "booker_internet_gateway" {
   }
 }
 
-## tester_internet_gateway
-resource "aws_internet_gateway" "tester_igw" {
-  vpc_id = data.aws_vpc.tester_vpc.id
-
-  tags = {
-    Name = var.tester_internet_gateway_tag
-  }
-}
