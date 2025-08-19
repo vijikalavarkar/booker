@@ -24,3 +24,14 @@ variable "route_table_tag" {}
 # Security Group
 variable "aws_security_group_tag" {}
 
+
+
+variable "ami" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "instance_tag" {}
+
+
+variable "dynamodb_table_name" {}
+variable "billing_mode" {}
+variable "hash_key" {}
