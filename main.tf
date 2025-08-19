@@ -9,6 +9,7 @@ terraform {
     bucket = "booker-state-bucket-001"
     key    = "booker_state_file.tfstate"
     region = "us-east-1"
+    use_lockfile = true
   }
 }
 
@@ -64,3 +65,21 @@ module "security_group" {
   vpc_id = module.vpc.vpc_id
   aws_security_group_tag = var.aws_security_group_tag
 }
+
+module "ec2" {
+  source = "./modules/ec2"
+  subnet1_id = module.subnets.subnet1_id
+  security_group_id = module.security_group.security_group_id
+  ami = var.ami
+  instance_type = var.instance_type
+  key_name = var.key_name
+  instance_tag = var.instance_tag
+}
+
+module "dynamodb" {
+  source = "./modules/dynamodb"
+  dynamodb_table_name = var.dynamodb_table_name
+  billing_mode = var.billing_mode
+  hash_key = var.hash_key
+}
+
